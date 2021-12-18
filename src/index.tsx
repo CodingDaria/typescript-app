@@ -6,12 +6,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 import './assets/css/index.css';
 
-import reportWebVitals from './reportWebVitals';
-import { getStore } from './store';
+import { store, persistor } from './store';
 
 import App from './App';
-
-const { store, persistor } = getStore();
 
 ReactDOM.render(
   <React.StrictMode>
@@ -25,8 +22,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
