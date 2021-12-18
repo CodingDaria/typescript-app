@@ -1,12 +1,9 @@
-import { combineReducers, ThunkAction, Action } from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
 
-export const rootReducer = combineReducers({});
+const rootReducer = combineReducers({});
+
+export default rootReducer;
+
+// export interface ReduxState {}
 
 export type RootState = ReturnType<typeof rootReducer>;
-
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->;
