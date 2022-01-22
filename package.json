@@ -35,13 +35,15 @@
   },
   "scripts": {
     "start": "yarn tailwind-build && react-scripts start",
+    "dev": "react-scripts start",
     "build": "yarn tailwind-build && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier ./src/**/*.{ts,tsx} --write",
     "lint": "eslint -c .eslintrc --ext .js,.jsx,.ts,.tsx src",
     "prepare": "husky install",
-    "tailwind-build": "npx tailwindcss build -i src/assets/css/index.scss -o src/assets/css/main.scss"
+    "tailwind-build": "npx tailwindcss build -i src/assets/css/index.scss -o src/assets/css/main.scss",
+    "watch:css": "npx tailwindcss build -i src/assets/css/index.scss -o src/assets/css/main.scss --watch"
   },
   "browserslist": {
     "production": [
