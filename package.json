@@ -7,13 +7,6 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@types/react-redux": "^7.1.20",
-    "@types/react-router-dom": "^5.3.2",
-    "@types/redux-persist": "^4.3.1",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "^5.9.1",
     "autoprefixer": "^10.4.2",
@@ -23,7 +16,6 @@
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "4.0.3",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
@@ -31,13 +23,14 @@
     "sass": "^1.48.0",
     "tailwindcss": "2.2.19",
     "typescript": "^4.1.2",
+    "vite": "^6.1.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "yarn tailwind-build && react-scripts start",
-    "build": "yarn tailwind-build && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "yarn tailwind-build && VITE_CJS_TRACE=true vite",
+    "build": "yarn tailwind-build && tsc -b && vite build",
+    "preview": "yarn tailwind-build && vite preview",
+    "test": "",
     "prettier": "prettier ./src/**/*.{ts,tsx} --write",
     "lint": "eslint -c .eslintrc --ext .js,.jsx,.ts,.tsx src",
     "prepare": "husky install",
@@ -56,9 +49,18 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^20.14.8",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-redux": "^7.1.20",
+    "@types/react-router-dom": "^5.3.2",
+    "@types/redux-persist": "^4.3.1",
+    "@vitejs/plugin-react-swc": "^3.8.0",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
-    "prettier": "2.4.1"
+    "prettier": "2.4.1",
+    "vite-plugin-svgr": "^4.3.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "eslint --fix --max-warnings=20"
