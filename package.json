@@ -9,9 +9,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@typescript-eslint/eslint-plugin": "^5.9.1",
-    "@typescript-eslint/parser": "^5.9.1",
-    "eslint-plugin-prettier": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
     "postcss": "^8.4.47",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -21,10 +20,8 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.0",
-    "sass": "^1.48.0",
+    "sass": "^1.85.0",
     "tailwindcss": "^4.0.6",
-    "typescript": "^4.1.2",
-    "vite": "^6.1.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -32,9 +29,9 @@
     "build": "yarn tailwind-build && tsc -b && vite build",
     "preview": "yarn tailwind-build && vite preview",
     "test": "",
-    "prettier": "prettier ./src/**/*.{ts,tsx} --write",
-    "lint": "eslint -c .eslintrc --ext .js,.jsx,.ts,.tsx src",
-    "prepare": "husky install",
+    "prettier": "prettier . --ignore-path .gitignore --write",
+    "lint": "eslint src --fix --max-warnings=5",
+    "prepare": "husky",
     "tailwind-build": "npx @tailwindcss/cli -i src/assets/css/index.scss -o src/assets/css/main.scss"
   },
   "browserslist": {
@@ -50,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@eslint/js": "^9.20.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^20.14.8",
     "@types/react": "^17.0.0",
@@ -58,12 +56,21 @@
     "@types/react-router-dom": "^5.3.2",
     "@types/redux-persist": "^4.3.1",
     "@vitejs/plugin-react-swc": "^3.8.0",
-    "husky": "^7.0.4",
-    "lint-staged": "^11.2.6",
-    "prettier": "2.4.1",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^15.15.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.1",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.1.0",
     "vite-plugin-svgr": "^4.3.0"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "eslint --fix --max-warnings=20"
+    "src/**/*.{js,jsx,ts,tsx}": "yarn lint"
   }
 }
