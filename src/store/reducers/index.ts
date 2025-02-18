@@ -4,6 +4,4 @@ const rootReducer = combineReducers({});
 
 export default rootReducer;
 
-// export interface ReduxState {}
-
 export type RootState = ReturnType<typeof rootReducer>;
