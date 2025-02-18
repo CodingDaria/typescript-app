@@ -6,9 +6,11 @@
     "@reduxjs/toolkit": "^2.5.1",
     "@tailwindcss/cli": "^4.0.6",
     "@tailwindcss/postcss": "^4.0.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "jsdom": "^26.0.0",
     "postcss": "^8.4.47",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -25,7 +27,7 @@
     "start": "yarn tailwind-build && VITE_CJS_TRACE=true vite",
     "build": "yarn tailwind-build && tsc -b && vite build",
     "preview": "yarn tailwind-build && vite preview",
-    "test": "",
+    "test": "vitest run",
     "prettier": "prettier . --ignore-path .gitignore --write",
     "lint": "eslint src --fix --max-warnings=5",
     "prepare": "husky",
@@ -47,7 +49,7 @@
     "@eslint/js": "^9.20.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^20.14.8",
-    "@types/react": "^17.0.0",
+    "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@types/react-redux": "^7.1.20",
     "@types/react-router-dom": "^5.3.2",
@@ -65,7 +67,8 @@
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.1.0",
-    "vite-plugin-svgr": "^4.3.0"
+    "vite-plugin-svgr": "^4.3.0",
+    "vitest": "^3.0.6"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "yarn lint"
