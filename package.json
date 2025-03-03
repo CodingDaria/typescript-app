@@ -5,13 +5,12 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
     "@tailwindcss/cli": "^4.0.6",
-    "@tailwindcss/postcss": "^4.0.0",
+    "@tailwindcss/vite": "^4.0.9",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
     "jsdom": "^26.0.0",
-    "postcss": "^8.4.47",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
@@ -19,7 +18,6 @@
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^3.1.0",
-    "sass": "^1.85.0",
     "tailwindcss": "^4.0.6",
     "web-vitals": "^1.0.1"
   },
@@ -31,7 +29,7 @@
     "prettier": "prettier . --ignore-path .gitignore --write",
     "lint": "eslint src --fix --max-warnings=5",
     "prepare": "husky",
-    "tailwind-build": "npx @tailwindcss/cli -i src/assets/css/index.scss -o src/assets/css/main.scss"
+    "tailwind-build": "npx @tailwindcss/cli -i src/assets/css/index.css -o src/assets/css/main.css"
   },
   "browserslist": {
     "production": [
