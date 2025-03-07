@@ -1,8 +1,5 @@
-module.exports = {
-  mode: 'jit',
-  purge: ['./src/**/*.{html,tsx,jsx,ts,js}'],
+export default {
   content: ['./src/**/*.{html,tsx,jsx,ts,js}'],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
   },
